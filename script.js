@@ -9,8 +9,8 @@ async function getData() {
     function reload(){
         let id =  document.querySelector('.advice-title')
         let text = document.querySelector('.advice-text')
-        id.innerHTML = `ADVICE # ${idV}`
-        text.innerHTML = textV
+        id.textContent = `ADVICE # ${idV}`
+        text.textContent = textV
     }   
     reload()
 }
