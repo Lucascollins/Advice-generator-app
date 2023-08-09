@@ -1,13 +1,18 @@
+var url = 'https://api.adviceslip.com/advice'
+
+
 async function getData() {
-    const response = await fetch('https://api.adviceslip.com/advice');
+    const response = await fetch(url);
     const data = await response.json();
     let idV = data.slip['id']
     let textV = data.slip['advice']
-    let id =  document.querySelector('.advice-title')
-    let text = document.querySelector('.advice-text')
-    id.innerHTML = idV  
-    text.innerHTML = textV
- 
+    function reload(){
+        let id =  document.querySelector('.advice-title')
+        let text = document.querySelector('.advice-text')
+        id.innerHTML = `ADVICE # ${idV}`
+        text.innerHTML = textV
+    }   
+    reload()
 }
 
- getData()
+getData()
